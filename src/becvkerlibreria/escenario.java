@@ -17,26 +17,52 @@ public class escenario {
      */
     public escenario(){
         this.ciudad = new City();
-        for(int i = 1; i<=6; i++){
-            Wall pared = new Wall(ciudad, 1, i, Direction.NORTH);
+
+        Wall zona1 = new Wall(ciudad, 0, 0, Direction.NORTH);
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 0, Direction.WEST);
         }
         
-        for(int i = 1; i<=6; i++){
-            Wall pared = new Wall(ciudad, i, 1, Direction.WEST);
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 0, Direction.EAST);
         }
         
-        for(int i = 1; i<=6; i++){
-            Wall pared = new Wall(ciudad, 6, i, Direction.SOUTH);
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 8, Direction.EAST);
         }
         
-        for(int i = 1; i<=6; i++){
-            Wall pared = new Wall(ciudad, i, 6, Direction.EAST);
+        Wall zona2 = new Wall(ciudad, 0, 2, Direction.NORTH);
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 2, Direction.WEST);
         }
         
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 2, Direction.EAST);
+        }
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 8, Direction.EAST);
+        }
+        
+        Wall zona3 = new Wall(ciudad, 0, 2, Direction.NORTH);
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 4, Direction.WEST);
+        }
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 4, Direction.EAST);
+        }
+        
+        for(int i = 0; i<=4; i++){
+            Wall pared = new Wall(ciudad, i, 8, Direction.EAST);
+        }
         this.robot = new Robot(ciudad, 1, 1, Direction.WEST);
         robot.setLabel("ROBOT");
         
-        for(int i = 2; i<=6; i++){
+        /*for(int i = 2; i<=6; i++){
             for(int j = 1; j<=5; j++){
                 if(i==j+1){
                     Thing thing = new Thing(this.ciudad, i, j);
@@ -44,13 +70,13 @@ public class escenario {
                     thing.getIcon().setLabel("TO");
                 }
             }
-        }
+        }*/
     }
     
     /**
      * Descripcion del metodo
      * @param pasos descripcion del parametro
-     * @return Descripcion del retorno
+     * @return descripocion retorno
      */
     public int ejecutar(int pasos){
         this.robot.turnLeft();
